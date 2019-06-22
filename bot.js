@@ -28,6 +28,7 @@ server.on('request', (request, response) => {
 				console.log(body.toString());
 				let message = JSON.parse(body[0]);
 				checkMessages(message);
+				this.res.writeHead(200);
 				response.end();
 			});
 			break;
