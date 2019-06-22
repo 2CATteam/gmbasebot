@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 
 const server = http.createServer();
 
@@ -60,7 +61,7 @@ function sendMessage(messageText) {
 	};
 
 	
-	const botRequest = http.request(options, function(response) {
+	const botRequest = https.request(options, function(response) {
 		if (response.statusCode !== 202) {
 			console.log('Bad status ' + response.statusCode);
 		}
