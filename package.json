@@ -1,0 +1,13 @@
+{
+  "name": "newbasebot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Daniel Royer (2CATteam@gmail.com)",
+  "main": "bot.js",
+  "scripts": {
+	"start": "node bot.js",
+    "test": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
