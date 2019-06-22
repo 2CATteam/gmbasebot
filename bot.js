@@ -9,7 +9,6 @@ let bots = [insult, comp];
 
 server.on('request', (request, response) => {
 	console.log('Request!');
-	console.log(request);
 	const method = request.method;
 	var data = null;
 	switch (method) {
@@ -61,7 +60,7 @@ function sendMessage(messageText) {
 	};
 
 	
-	const botRequest = https.request(options, function(response) {
+	const botRequest = http.request(options, function(response) {
 		if (response.statusCode !== 202) {
 			console.log('Bad status ' + response.statusCode);
 		}
