@@ -39,6 +39,8 @@ server.on('request', (request, response) => {
 
 function checkMessages(message) {
 	console.log('Checking messages');
+	console.log(bots);
+	console.log(bots.length);
 	for (var i = 0; i < bots.length; i++)
 	{
 		let toSend = bots[i].checkMessage(message);

@@ -1,5 +1,5 @@
 const insultArray = require('./res/insultArray.json');
-const regex = /^\/roast\s?/;
+const insultRegex = /^\/roast\s?/;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/;
 exports.checkMessage = function(message) {
 	console.log('Insulting');

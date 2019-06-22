@@ -1,5 +1,5 @@
 const arrays = require('./res/compArray.json');
-const regex = /^\/comp\s?/;
+const compRegex = /^\/comp\s?/;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/;
 exports.checkMessage = function(message) {
 	console.log('Comping');
