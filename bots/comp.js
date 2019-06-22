@@ -5,7 +5,7 @@ exports.checkMessage = function(message) {
 	console.log('Comping');
 	if (regex.test(message.text) && !spamRegex.test(message.text))
 	{
-		var toReturn = message.text.substring(5,message.length);
+		var toReturn = message.text.substring(5,message.text.length);
 		toReturn += " ";
 		randomInt = Math.floor(Math.random() * arrays.firstNounArray.length);
 		toReturn += arrays.firstNounArray[randomInt];
