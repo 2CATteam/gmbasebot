@@ -33,7 +33,7 @@ server.on('request', (request, response) => {
 	}
 });
 
-checkMessages(message) {
+function checkMessages(message) {
 	for (var i = 0; i < bots.length; i++)
 	{
 		let toSend = bots[i].checkMessage(message);
@@ -41,7 +41,7 @@ checkMessages(message) {
 	}
 }
 
-sendMessage(messageText) {
+function sendMessage(messageText) {
 	const botId = process.env.BOT_ID;
 	
 	const options = {
