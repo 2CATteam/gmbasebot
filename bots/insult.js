@@ -3,7 +3,7 @@ const regex = /^\/roast\s?/;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/;
 exports.checkMessage = function(message) {
 	console.log('Insulting');
-	if (regex.test(message.text)
+	if (regex.test(message.text))
 	{
 		var toReturn = message.text.substring(6,message.text.length);
 		toReturn += ", you ";
