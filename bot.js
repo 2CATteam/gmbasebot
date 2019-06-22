@@ -8,11 +8,12 @@ const comp = require("./bots/comp")
 let bots = [insult, comp];
 
 server.on('request', (request, response) => {
-	console.log(states);
+	console.log('Request!');
 	const method = request.method;
 	var data = null;
 	switch (method) {
 		case 'GET':
+			console.log('Starting GET!');
 			response.end('Nice GET request!');
 			break;
 		case 'POST':
