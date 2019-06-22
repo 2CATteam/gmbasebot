@@ -1,6 +1,6 @@
-const https = require('https');
+const http = require('http');
 
-const server = https.createServer();
+const server = http.createServer();
 
 const insult = require("./bots/insult");
 const comp = require("./bots/comp")
