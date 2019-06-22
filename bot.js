@@ -9,6 +9,7 @@ let bots = [insult, comp];
 
 server.on('request', (request, response) => {
 	console.log('Request!');
+	console.log(request);
 	const method = request.method;
 	var data = null;
 	switch (method) {
@@ -77,3 +78,5 @@ function sendMessage(messageText) {
 };
 
 server.listen(process.env.PORT);
+
+console.log("Beginning to listen");
