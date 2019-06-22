@@ -2,6 +2,7 @@ const arrays = require('./res/compArray.json');
 const regex = /^\/comp\s?/;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/;
 exports.checkMessage = function(message) {
+	console.log('Comping');
 	if (regex.test(message.text) && !spamRegex.test(message.text))
 	{
 		var toReturn = message.substring(5,message.length);

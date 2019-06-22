@@ -2,6 +2,7 @@ const insultArray = require('./res/insultArray.json');
 const regex = /^\/roast\s?/;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/;
 exports.checkMessage = function(message) {
+	console.log('Insulting');
 	var toReturn = message.text.substring(6,message.length);
 	toReturn += ", you ";
 	if (Math.random() < 0.1 || message.text.includes("magickeyroast"))
