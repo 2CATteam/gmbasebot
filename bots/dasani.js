@@ -48,7 +48,7 @@ exports.checkMessage = function(message)
 				toReturn += 'It\'s the #1 water in the world, with the also-good Aquafina in a very close second place!';
 			}
 			else if (randomMessage<.4) {
-				toReturn += 'The tier list for bottled water goes:\n\nDasani\nAquafina\nAny other non-Nestle water\nOzarka\nNestle Pure Life\n\nThis is objective fact, don\'t try to argue it.';
+				toReturn += 'The tier list for bottled water goes:\n\nDasani\nAquafina\nAny other non-Nestle water\nNestle Pure Life\nOzarka\n\nThis is objective fact, don\'t try to argue it.';
 			}
 			else if (randomMessage<.5) {
 				toReturn += 'It\'s remineralized with Magnesium Sulfate, Potassium Chloride, and salt. While those sound like scary chemicals, they actually help your body digest the water, and keep it from trying to dissolve you! Isn\'t Dasani great?';
