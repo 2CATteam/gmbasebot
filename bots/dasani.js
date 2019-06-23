@@ -17,7 +17,7 @@ exports.checkMessage = function(message)
 	{
 		if (badRegex.test(messageText))
 		{
-			if (botRegex.test(messageText))
+			if (dasaniRegex.test(messageText))
 			{
 				toReturn = "Hey, I know you're not trying to be mean or anything, but I don't appreciate you bringing up " + badRegex.exec(messageText)[0] + " and Dasani in the same message...";
 			}
@@ -36,7 +36,7 @@ exports.checkMessage = function(message)
 			toReturn = "Oh, cool, Aquafina! I like that water! It's not as good as Dasani, but, you know, not all water can be perfect.";
 		}
 		
-		if (botRegex.test(messageText)) {
+		if (dasaniRegex.test(messageText)) {
 			// Check is successful, return a message!
 			randomMessage = Math.random();
 			toReturn = 'Did I hear Dasani? I LOVE Dasani!\n\nFun fact about Dasani: ';
