@@ -41,7 +41,7 @@ function gulagify(prompt) {
 	{
 		gulag[key] = num;
 	}
-	fs.writeFile('./res/gulags.json', JSON.stringify(gulag), 'utf-8');
+	fs.writeFileSync('./res/gulags.json', JSON.stringify(gulag), 'utf-8');
 	var toSend = key;
 	toSend += " has been sent to the gulag. They are now serving ";
 	toSend += gulag[key];
@@ -63,7 +63,7 @@ function pardon(prompt) {
 	if (gulag[key])
 	{
 		gulag[key] = 0;
-		fs.writeFile('gulags.json', JSON.stringify(gulag), 'utf-8');
+		fs.writeFileSync('gulags.json', JSON.stringify(gulag), 'utf-8');
 		return key + " has been graciously pardoned!";
 	}
 	else
