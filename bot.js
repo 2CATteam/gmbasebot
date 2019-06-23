@@ -4,9 +4,13 @@ const https = require('https');
 const server = http.createServer();
 
 const insult = require("./bots/insult");
-const comp = require("./bots/comp")
+const comp = require("./bots/comp");
+const oof = require("./bots/oof");
+const F = require("./bots/F");
+const help = require("./bots/help");
+const pressTo = require("./bots/pressTo");
 
-let bots = [insult, comp];
+let bots = [insult, comp, oof, F, help, pressTo];
 
 server.on('request', (request, response) => {
 	console.log('Request!');
