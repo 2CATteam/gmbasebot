@@ -12,7 +12,7 @@ const pressTo = require("./bots/pressTo");
 const dasani = require("./bots/dasani");
 const gulags = require("./bots/gulags");
 
-let bots = [insult, comp, oof, F, help, pressTo, dasani, gulags];
+let bots = [insult, comp, oof, F, help, pressTo];
 
 server.on('request', (request, response) => {
 	console.log('Request!');
