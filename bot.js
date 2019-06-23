@@ -46,7 +46,10 @@ function checkMessages(message) {
 	for (var i = 0; i < bots.length; i++)
 	{
 		let toSend = bots[i].checkMessage(message);
-		sendMessage(toSend);
+		if (toSend)
+		{
+			sendMessage(toSend);
+		}
 	}
 }
 
