@@ -30,13 +30,11 @@ exports.checkMessage = function(message)
 				toReturn = "UGH DON'T EVEN BRING UP THAT NESTLE WANNABE SLUDGE";
 			}
 		}
-		
-		if (aquafinaRegex.test(messageText))
+		else if (aquafinaRegex.test(messageText))
 		{
 			toReturn = "Oh, cool, Aquafina! I like that water! It's not as good as Dasani, but, you know, not all water can be perfect.";
 		}
-		
-		if (dasaniRegex.test(messageText)) {
+		else if (dasaniRegex.test(messageText)) {
 			// Check is successful, return a message!
 			randomMessage = Math.random();
 			toReturn = 'Did I hear Dasani? I LOVE Dasani!\n\nFun fact about Dasani: ';
