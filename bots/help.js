@@ -13,7 +13,7 @@ And, most importantly, if you say BIG, I say OOF
 
 Hope that wasn't too much! Remember, you can always type /help to read this again! Have fun!`;
 
-exports.checkMessage(message)
+exports.checkMessage = function(message)
 {
 	if (regex.test(message.text))
 	{

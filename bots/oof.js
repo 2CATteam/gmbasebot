@@ -1,6 +1,6 @@
 const regex = /^b\s?i\s?g/i;
 
-exports.checkMessage(message)
+exports.checkMessage = function(message)
 {
 	if (regex.test(message.text))
 	{
