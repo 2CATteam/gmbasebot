@@ -1,8 +1,6 @@
 const fs = require('fs');
 const https = require('https')
 
-const bot = require()
-
 const regex = /^\/compile\s?python\s?\n+/i;
 
 exports.checkMessage = function(message)
