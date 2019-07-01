@@ -15,6 +15,9 @@ exports.checkMessage = function(message)
         name += dateName.getTime().toString()
         name += ".py"
 		console.log("Writing code")
+		if (!fs.existsSync("./python")){
+			fs.mkdirSync("./python");
+		}
         fs.writeFileSync(name, code, 'utf-8')
 		console.log("Wrote code")
         var spawn = require("child_process").spawn;
