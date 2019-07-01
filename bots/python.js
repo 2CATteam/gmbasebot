@@ -7,8 +7,8 @@ exports.checkMessage = function(message)
 {
 	if (regex.test(message.text))
 	{
-		var code = prompt.content
-        var string = prompt.content.match(regex)[0]
+		var code = message.text
+        var string = message.text.match(regex)[0]
         code = code.substring(string.length, code.length)
         var name = "./python/"
         dateName = new Date()
