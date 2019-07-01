@@ -15,6 +15,7 @@ exports.checkMessage = function(message)
         name += dateName.getTime().toString()
         name += ".py"
         fs.writeFileSync(name, code, 'utf-8')
+		console.log("Wrote code")
         var spawn = require("child_process").spawn;
         var subProcess = spawn('python', [name])
         subProcess.stderr.on('data', (err) => {
