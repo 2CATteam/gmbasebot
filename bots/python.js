@@ -14,6 +14,7 @@ exports.checkMessage = function(message)
         dateName = new Date()
         name += dateName.getTime().toString()
         name += ".py"
+		console.log("Writing code")
         fs.writeFileSync(name, code, 'utf-8')
 		console.log("Wrote code")
         var spawn = require("child_process").spawn;
