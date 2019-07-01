@@ -16,16 +16,13 @@ exports.checkMessage = function(message)
         name += ".py"
         fs.writeFileSync(name, code, 'utf-8')
         var spawn = require("child_process").spawn;
-        var subProcess = spawn('python3.7', [name])
+        var subProcess = spawn('python', [name])
         subProcess.stderr.on('data', (err) => {
             sendMessage(err.toString())
         });
         subProcess.stdout.on('data', function(data) {
             sendMessage(data.toString())
         });
-        setTimeout(() => {
-            fs.unlinkSync(name)
-        }, 30000)
 	}
 }
 
