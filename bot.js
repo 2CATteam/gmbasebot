@@ -11,8 +11,9 @@ const help = require("./bots/help");
 const pressTo = require("./bots/pressTo");
 const dasani = require("./bots/dasani");
 const gulags = require("./bots/gulags");
+const python = require("./bots/python");
 
-let bots = [insult, comp, oof, F, help, pressTo];
+let bots = [insult, comp, oof, F, help, pressTo, python];
 
 server.on('request', (request, response) => {
 	console.log('Request!');

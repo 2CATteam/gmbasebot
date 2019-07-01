@@ -5,6 +5,7 @@ const helpString = `Here are all the commands I can respond to:
 /roast [something] will generate a random insult
 /comp [something] will generate a random compliment
 /help will bring up this message again.
+/compile python [code] will compile some Python code and send the result!
 
 I'll also react to certain things you say!
 If told to press something to do something, I'll press it!
