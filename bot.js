@@ -11,8 +11,9 @@ const help = require("./bots/help");
 const pressTo = require("./bots/pressTo");
 const dasani = require("./bots/dasani");
 const python = require("./bots/python");
+const define = require("./bots/define")
 
-let bots = [insult, comp, oof, F, pressTo, python];
+let bots = [insult, comp, oof, F, pressTo, python, define];
 
 var helper = new help.helpGener(bots)
 bots.push(helper)

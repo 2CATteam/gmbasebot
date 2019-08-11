@@ -2,6 +2,8 @@ const curl = require('curl')
 const jsdom = require("jsdom")
 const https = require('https')
 
+exports.helpString = "/define [word] will try to define that word!"
+
 exports.checkMessage = function(word, channel) {
 	word = word.replace(/\s/g, "+");
 	const url = "https://www.google.com/search?q=define+" + word;
