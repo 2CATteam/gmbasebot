@@ -2,6 +2,7 @@ const curl = require('curl')
 const jsdom = require("jsdom")
 const https = require('https')
 const regex = /^\/define\s(.+)/i;
+const sender = require('./sender.js').send
 
 exports.helpString = "/define [word] will try to define that word!"
 
@@ -36,7 +37,7 @@ exports.checkMessage = function(message) {
 				}
 				return true
 			})
-			sendMessage(toReturn)
+			sender(toReturn)
 		}
 		else {
 			console.log(err)
