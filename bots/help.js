@@ -10,7 +10,7 @@ exports = class helpGener {
 		this.helpString += "\nHope that wasn't too much! Remember, you can always type /help to read this again! Have fun!"
 	}
 	
-	function checkMessage(message) {
+	checkMessage(message) {
 		if (regex.test(message.text))
 		{
 			sender(this.helpString);
