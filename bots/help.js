@@ -1,7 +1,7 @@
 const regex = /^\/help/i;
 const sender = require('./sender.js').send
 
-exports = class helpGener {
+exports.helpGener = class helpGener {
 	constructor(arr) {
 		this.helpString = "Here are all the commands I can respond to: \n\n"
 		for (var module in arr) {

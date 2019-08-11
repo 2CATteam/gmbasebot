@@ -14,7 +14,7 @@ const python = require("./bots/python");
 
 let bots = [insult, comp, oof, F, pressTo, python];
 
-var helper = new help(bots)
+var helper = new help.helpGener(bots)
 bots.push(helper)
 
 server.on('request', (request, response) => {
