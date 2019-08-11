@@ -12,7 +12,10 @@ const pressTo = require("./bots/pressTo");
 const dasani = require("./bots/dasani");
 const python = require("./bots/python");
 
-let bots = [insult, comp, oof, F, help, pressTo, python];
+let bots = [insult, comp, oof, F, pressTo, python];
+
+var helper = new help(bots)
+bots.push(helper)
 
 server.on('request', (request, response) => {
 	console.log('Request!');
