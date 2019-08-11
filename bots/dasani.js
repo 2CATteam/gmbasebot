@@ -10,6 +10,8 @@ const badRegex = /(ozarka)|(pure life)|(nestle)|(smart water)|(fiji)/i;
 
 const sender = require('./sender.js').send
 
+exports.helpString = "If you mention Dasani or some other water brand, I may react!"
+
 exports.checkMessage = function(message)
 {
 	messageText = message.text;

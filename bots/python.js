@@ -4,6 +4,8 @@ const sender = require('./sender.js').send
 
 const regex = /^\/compile\s?python\s?\n+/i;
 
+exports.helpString = "/compile Python \\n [code] will compile and run some Python code!"
+
 exports.checkMessage = function(message)
 {
 	if (regex.test(message.text))

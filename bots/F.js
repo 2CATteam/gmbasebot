@@ -1,5 +1,6 @@
 const regex = /^f$/i;
 const sender = require('./sender.js').send
+exports.helpString = "If your group is throwing some Fs in the chat, I may join in!"
 
 exports.checkMessage = function(message)
 {
