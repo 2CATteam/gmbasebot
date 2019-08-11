@@ -1,4 +1,5 @@
 const regex = /^f$/i;
+const sender = require('./sender.js')
 
 exports.checkMessage = function(message)
 {
@@ -6,6 +7,6 @@ exports.checkMessage = function(message)
 	if (regex.test(message.text) && Math.random() < 0.2 && message.sender_type == "user")
 	{
 		console.log("F this");
-		return "F";
+		sender("F");
 	}
 }

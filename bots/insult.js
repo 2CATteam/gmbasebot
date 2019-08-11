@@ -1,6 +1,8 @@
 const insultArray = require('./res/insultArray.json');
 const regex = /^\/roast\s?/i;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/i;
+const sender = require('./sender.js')
+
 exports.checkMessage = function(message) {
 	if (regex.test(message.text) && !spamRegex.test(message.text))
 	{
@@ -32,7 +34,7 @@ exports.checkMessage = function(message) {
 					toReturn += insultArray.secondInsultArray[randomInt];
 			toReturn += "!";
 		}
-		return toReturn;
+		sender(toReturn);
 	}
 	return null;
 }

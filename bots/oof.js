@@ -1,9 +1,11 @@
 const regex = /^b\s?i\s?g/i;
 
+const sender = require('./sender.js')
+
 exports.checkMessage = function(message)
 {
 	if (regex.test(message.text))
 	{
-		return "OOF";
+		sender("OOF");
 	}
 }

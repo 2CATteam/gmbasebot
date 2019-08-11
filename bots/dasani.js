@@ -8,6 +8,8 @@ const aquafinaRegex = /aquafina/i;
 	
 const badRegex = /(ozarka)|(pure life)|(nestle)|(smart water)|(fiji)/i;
 
+const sender = require('./sender.js')
+
 exports.checkMessage = function(message)
 {
 	messageText = message.text;
@@ -71,5 +73,5 @@ exports.checkMessage = function(message)
 		}
 	}
 	
-	return toReturn;
+	sender(toReturn);
 }
