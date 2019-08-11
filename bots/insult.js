@@ -1,7 +1,7 @@
 const insultArray = require('./res/insultArray.json');
 const regex = /^\/roast\s?/i;
 const spamRegex = /^(\/comp\s?|\/roast\s?){4,}/i;
-const sender = require('./sender.js')
+const sender = require('./sender.js').send
 
 exports.checkMessage = function(message) {
 	if (regex.test(message.text) && !spamRegex.test(message.text))

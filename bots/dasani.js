@@ -8,7 +8,7 @@ const aquafinaRegex = /aquafina/i;
 	
 const badRegex = /(ozarka)|(pure life)|(nestle)|(smart water)|(fiji)/i;
 
-const sender = require('./sender.js')
+const sender = require('./sender.js').send
 
 exports.checkMessage = function(message)
 {

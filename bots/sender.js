@@ -1,36 +1,32 @@
 const https = require('https')
 
-class sender {
-	constructor(toSend) {
-		const botId = process.env.BOT_ID;
+exports.send = function(messageText) {
+	const botId = process.env.BOT_ID;
 	
-		const options = {
-			hostname: 'api.groupme.com',
+	const options = {
+		hostname: 'api.groupme.com',
 		path: '/v3/bots/post',
-			method: 'POST'
-		};
+		method: 'POST'
+	};
 
-		const body = {
-			bot_id: botId,
-			text: messageText
-		};
+	const body = {
+		bot_id: botId,
+		text: messageText
+	};
 
 	
-		const botRequest = https.request(options, function(response) {
-			if (response.statusCode !== 202) {
-				console.log('Bad status ' + response.statusCode);
-			}
-		});
+	const botRequest = https.request(options, function(response) {
+		if (response.statusCode !== 202) {
+			console.log('Bad status ' + response.statusCode);
+		}
+	});
 	
-		botRequest.on('error', function(error) {
-			console.log(JSON.stringify(error));
-		});
+	botRequest.on('error', function(error) {
+		console.log(JSON.stringify(error));
+	});
 
-		botRequest.on('timeout', function(error) {
-			console.log('Timeout ' + JSON.stringify(error));
-		});
-		botRequest.end(JSON.stringify(body));
-	}
-}
-
-exports = sender
+	botRequest.on('timeout', function(error) {
+		console.log('Timeout ' + JSON.stringify(error));
+	});
+	botRequest.end(JSON.stringify(body));
+};

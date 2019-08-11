@@ -1,5 +1,5 @@
 const regex = /^(press|type) (.+) to/i;
-const sender = require('./sender.js')
+const sender = require('./sender.js').send
 
 exports.checkMessage = function(message)
 {

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const https = require('https')
-const sender = require('./sender.js')
+const sender = require('./sender.js').send
 
 const regex = /^\/compile\s?python\s?\n+/i;
 
