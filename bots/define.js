@@ -1,10 +1,13 @@
 const curl = require('curl')
 const jsdom = require("jsdom")
 const https = require('https')
+const regex = /^\/define\s(.+)/i;
 
 exports.helpString = "/define [word] will try to define that word!"
 
-exports.checkMessage = function(word, channel) {
+exports.checkMessage = function(message) {
+	if (!regex.test(message.text)) { return }
+	var word = message.text.match(regex)[1]
 	word = word.replace(/\s/g, "+");
 	const url = "https://www.google.com/search?q=define+" + word;
 	curl.get(url, null, function(err, resp, body) {
