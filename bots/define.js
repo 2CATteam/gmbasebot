@@ -18,7 +18,7 @@ exports.checkMessage = function(message) {
 			const $ = (require('jquery'))(dom.window);
 			const dict = $('#main').children().eq(3)//$(".yc7KLc")//.closest('.lr_dct_ent');
 			if (dict.find('.BNeawe.deIvCb.AP7Wnd').length == 0) { return }
-			var toReturn = '__**' + dict.find('.BNeawe.deIvCb.AP7Wnd').text() + '**__\n'
+			var toReturn = dict.find('.BNeawe.deIvCb.AP7Wnd').text() + '\n'
 			dict.find(".BNeawe.s3v9rd.AP7Wnd").eq(0).children().each((index, element) => {
 				if ($(element).find('li').length > 0) {
 					var i = 1
@@ -29,7 +29,7 @@ exports.checkMessage = function(message) {
 				}
 				else {
 					if ($(element).find('.r0bn4c.rQMQod').length > 0) {
-						toReturn += $(element).text() + '\n'
+						toReturn += '\n' + $(element).text() + '\n'
 					}
 					else {
 						toReturn += ' 1: ' + $(element).text() + '\n'
