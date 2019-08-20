@@ -1,4 +1,4 @@
-const regex = /^(press|type|say) (.+) (to)?/i;
+const regex = /^(press|type|say)\s?(.+)\s?(to)?/i;
 const sender = require('./sender.js').send
 
 exports.helpString = "If told to press something or to say something, I'll say it! Say yes."
