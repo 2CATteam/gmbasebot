@@ -10,7 +10,7 @@ exports.checkMessage = function(message) {
 	const yandexKey = process.env.YANDEX_KEY;
 	if (translateRegex.test(message.text) && yandexKey) {
         const matches = message.text.match(translateRegex)
-        const text = encodeURI(matches[1])
+        const text = matches[1]
         var fromFlag = 'en'
         var toFlag = matches[2]
 		if (toFlag == 'en') {
@@ -26,7 +26,7 @@ exports.checkMessage = function(message) {
 		translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey } ).then((result) => {
 			sender(result)
 		})
-		
+		/*
         const options = {
             hostname: "translate.yandex.net",
             path: `/api/v1.5/tr.json/translate?key=${'Nothing'}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
@@ -48,5 +48,6 @@ exports.checkMessage = function(message) {
             console.log(e)
         })
         req.end()
+		*/
 	}
 }
