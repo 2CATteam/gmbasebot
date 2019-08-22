@@ -32,6 +32,7 @@ exports.checkMessage = function(message) {
                     const toSend = JSON.parse(d.toString()).text
                     sender(toSend)
                 } catch (err) {
+					console.log(d.toString())
                     sender("There was an issue translating that. Please try again but better this time.")
                 }
             })
