@@ -8,7 +8,7 @@ exports.helpString = "/translate \"[something]\" [country code] will translate s
 
 exports.checkMessage = function(message) {
 	const yandexKey = process.env.YANDEX_KEY;
-	if (translateRegex.test(message.text) && key) {
+	if (translateRegex.test(message.text) && yandexKey) {
         const matches = message.text.match(translateRegex)
         const text = encodeURI(matches[1])
         var fromFlag = 'en'
