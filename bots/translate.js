@@ -1,4 +1,4 @@
-const https = require('https')
+const http = require('http')
 const sender = require('./sender.js').send;
 
 const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
@@ -26,7 +26,7 @@ exports.checkMessage = function(message) {
             method: "POST"
         }
         console.log(options)
-        var req = https.request(options, (res) => {
+        var req = http.request(options, (res) => {
             res.on('data', (d) => {
                 try {
                     const toSend = JSON.parse(d.toString()).text
