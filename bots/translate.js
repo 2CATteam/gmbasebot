@@ -6,7 +6,8 @@ const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
 exports.helpString = "/translate \"[something]\" [country code] will translate something to a different language, using Yandex.\n"
 
 exports.checkMessage = function(message) {
-	if (translateRegex.test(message.text) && process.env.YANDEX_KEY) {
+	const key = process.env.YANDEX_KEY;
+	if (translateRegex.test(message.text) && key) {
         const matches = message.text.match(translateRegex)
         const text = encodeURI(matches[1])
         var fromFlag = 'en'
@@ -22,7 +23,7 @@ exports.checkMessage = function(message) {
         }
         const options = {
             hostname: "translate.yandex.net",
-            path: `/api/v1.5/tr.json/translate?key=${process.env.YANDEX_KEY}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
+            path: `/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
             method: "POST"
         }
         console.log(options)
