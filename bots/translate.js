@@ -23,7 +23,7 @@ exports.checkMessage = function(message) {
 			}
         }
 		
-		translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey) } ).then((result) => {
+		translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey } ).then((result) => {
 			sender(result)
 		})
 		
