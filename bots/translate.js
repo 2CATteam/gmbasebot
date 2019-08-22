@@ -13,7 +13,7 @@ exports.checkMessage = function(message) {
         const text = matches[1]
         var fromFlag = 'en'
         var toFlag = matches[2]
-		if (toFlag.equals('en')) {
+		if (toFlag == 'en') {
 			fromFlag = 'la'
 		}
         if (matches.length > 3) {
