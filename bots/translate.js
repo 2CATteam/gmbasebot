@@ -1,3 +1,4 @@
+const https = require('https')
 const sender = require('./sender.js').send;
 
 const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
