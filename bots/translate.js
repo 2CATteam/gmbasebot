@@ -1,4 +1,5 @@
 const https = require('https')
+const translate = require('translate')
 const sender = require('./sender.js').send;
 
 const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
@@ -6,7 +7,7 @@ const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
 exports.helpString = "/translate \"[something]\" [country code] will translate something to a different language, using Yandex.\n"
 
 exports.checkMessage = function(message) {
-	const key = process.env.YANDEX_KEY;
+	const yandexKey = process.env.YANDEX_KEY;
 	if (translateRegex.test(message.text) && key) {
         const matches = message.text.match(translateRegex)
         const text = encodeURI(matches[1])
@@ -21,9 +22,14 @@ exports.checkMessage = function(message) {
                 toFlag = matches[3]
 			}
         }
+		
+		translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey) } ).then((result) => {
+			sender(result)
+		})
+		
         const options = {
             hostname: "translate.yandex.net",
-            path: `/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
+            path: `/api/v1.5/tr.json/translate?key=${'Nothing'}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
             method: "POST"
         }
         console.log(options)
