@@ -26,28 +26,5 @@ exports.checkMessage = function(message) {
 		translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey } ).then((result) => {
 			sender(result)
 		})
-		/*
-        const options = {
-            hostname: "translate.yandex.net",
-            path: `/api/v1.5/tr.json/translate?key=${'Nothing'}&text=${text}&lang=${fromFlag + "-" + toFlag}`,
-            method: "POST"
-        }
-        console.log(options)
-        var req = https.request(options, (res) => {
-            res.on('data', (d) => {
-                try {
-                    const toSend = JSON.parse(d.toString()).text
-                    sender(toSend)
-                } catch (err) {
-					console.log(d.toString())
-                    sender("There was an issue translating that. Please try again but better this time.")
-                }
-            })
-        })
-        req.on('error', (e) => {
-            console.log(e)
-        })
-        req.end()
-		*/
 	}
 }
