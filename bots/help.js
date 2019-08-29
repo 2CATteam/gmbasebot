@@ -1,7 +1,8 @@
 const regex = /^\/help/i;
-const sender = require('./sender.js').send
 
-exports.helpGener = class helpGener {
+exports.help = class helpGener {
+	name = 'help'
+	
 	constructor(arr) {
 		this.helpString = "Here are all the commands I can respond to: \n\n"
 		for (var i = 0; i < arr.length; i++) {
@@ -11,9 +12,9 @@ exports.helpGener = class helpGener {
 	}
 	
 	checkMessage(message) {
-		if (regex.test(message.text))
+		if (regex.test(message.content))
 		{
-			sender(this.helpString);
+			message.channel.send(this.helpString)
 		}
 	}
 }
