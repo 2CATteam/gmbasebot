@@ -14,7 +14,7 @@ exports.checkMessage = function(message)
 	if (creeper.test(message.text)) {
 		sender("AW MAN");
 	}
-	if (dislike.test(message.text)) {
+	if (message.text.match(dislike)) {
 		console.log("Doing the thing")
 		sender("Your dislike has been noted and recorded.")
 	}
