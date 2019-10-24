@@ -15,12 +15,6 @@ exports.checkMessage = function(message)
 		sender("AW MAN");
 	}
 	if (message.text.match(dislike)) {
-		console.log("Doing the thing")
 		sender("Your dislike has been noted and recorded.")
-	}
-	else {
-		console.log(message.text)
-		console.log(dislike)
-		console.log(dislike.test(message.text))
 	}
 }
