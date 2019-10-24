@@ -15,6 +15,7 @@ exports.help = class helpGener {
 	checkMessage(message) {
 		if (regex.test(message.content))
 		{
+			console.log(this.helpString)
 			sender(this.helpString)
 		}
 	}
