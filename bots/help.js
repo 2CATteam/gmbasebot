@@ -14,7 +14,7 @@ exports.help = class helpGener {
 	checkMessage(message) {
 		if (regex.test(message.content))
 		{
-			message.channel.send(this.helpString)
+			sender(this.helpString)
 		}
 	}
 }
