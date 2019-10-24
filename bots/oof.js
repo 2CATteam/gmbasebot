@@ -20,5 +20,7 @@ exports.checkMessage = function(message)
 	}
 	else {
 		console.log(message.text)
+		console.log(dislike)
+		console.log(dislike.test(message.text))
 	}
 }
