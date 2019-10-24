@@ -16,7 +16,7 @@ const translate = require("./bots/translate")
 
 let bots = [insult, comp, oof, F, pressTo, python, define, translate];
 
-var helper = new help.helpGener(bots)
+var helper = new help(bots)
 bots.push(helper)
 
 server.on('request', (request, response) => {
