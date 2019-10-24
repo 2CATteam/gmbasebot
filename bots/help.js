@@ -13,7 +13,7 @@ exports.help = class helpGener {
 	}
 	
 	checkMessage(message) {
-		if (regex.test(message.content))
+		if (regex.test(message.text))
 		{
 			console.log(this.helpString)
 			sender(this.helpString)
