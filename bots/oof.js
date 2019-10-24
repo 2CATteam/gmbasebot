@@ -1,10 +1,10 @@
 const regex = /^b\s?i\s?g/i;
 const creeper = /^creeper$/i;
-const dislike = /^\/dislide$/i;
+const dislike = /^\/dislike$/i;
 
 const sender = require('./sender.js').send
 
-exports.helpString = "If you say BIG, I'll say OOF!"
+exports.helpString = "If you say BIG, I'll say OOF!\nThere are some other things I say, but you'll have to find those yourself!"
 
 exports.checkMessage = function(message)
 {
