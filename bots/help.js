@@ -1,4 +1,5 @@
 const regex = /^\/help/i;
+const sender = require('./sender.js').send
 
 exports.help = class helpGener {
 	
