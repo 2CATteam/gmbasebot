@@ -1,5 +1,6 @@
 const regex = /^b\s?i\s?g/i;
 const creeper = /^creeper$/i;
+const dislike = /^\/dislide$/i;
 
 const sender = require('./sender.js').send
 
@@ -14,5 +15,8 @@ exports.checkMessage = function(message)
 	if (creeper.test(message.text))
 	{
 		sender("AW MAN");
+	}
+	if (dislike.test(message.text)) {
+		sender("Your dislike has been noted and recorded.")
 	}
 }

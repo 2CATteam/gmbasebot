@@ -1,6 +1,10 @@
 const https = require('https')
 
-exports.send = function(messageText) {
+exports.send = function send(messageText) {
+	if (messageText.length > 500) {
+		send(messageText.substring(0, 499))
+		send(messageTest.substring(500, messageText.length))
+	}
 	const botId = process.env.BOT_ID;
 	
 	const options = {
