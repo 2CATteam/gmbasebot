@@ -1,9 +1,9 @@
 const regex = /^\/help/i;
 
 exports.help = class helpGener {
-	name = 'help'
 	
 	constructor(arr) {
+		this.name = 'help'
 		this.helpString = "Here are all the commands I can respond to: \n\n"
 		for (var i = 0; i < arr.length; i++) {
 			this.helpString += arr[i].helpString + "\n"
