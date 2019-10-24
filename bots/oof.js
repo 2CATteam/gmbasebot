@@ -8,16 +8,17 @@ exports.helpString = "If you say BIG, I'll say OOF!\nThere are some other things
 
 exports.checkMessage = function(message)
 {
-	if (regex.test(message.text))
-	{
+	if (regex.test(message.text)) {
 		sender("OOF");
 	}
-	if (creeper.test(message.text))
-	{
+	if (creeper.test(message.text)) {
 		sender("AW MAN");
 	}
 	if (dislike.test(message.text)) {
 		console.log("Doing the thing")
 		sender("Your dislike has been noted and recorded.")
+	}
+	else {
+		console.log(message.text)
 	}
 }
