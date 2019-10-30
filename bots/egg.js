@@ -11,6 +11,8 @@ exports.checkMessage = function(egggg) {
 		return;
 	}
 	fotology("EGG", function (imageURLs) {
+		console.log("Test")
+		console.log(imageURLs)
 		for (var i in imageURLs) {
 			console.log(imageURLs[i]);
 		}
