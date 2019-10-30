@@ -1,14 +1,14 @@
 const eg = require('./sender.js').send;
-const egg = require('free-google-image-search').GoogleImageSearch;
+var fotology = require('fotology');
 const eggg = /^\/egg/;
 
 exports.helpString = "/egg"
 
 exports.checkMessage = function(egggg) {
 	if (!eggg.test(egggg.text)) { return; }
-	egg.searchImage("EGG").then((eggggg) => {
-		console.log(eggggg);
-		eg(eggggg.toString());
-	})
-	
+	fotology("EGG", function (imageURLs) {
+		for (i in imageURLs) {
+			console.log(imageURLs[i]);
+		}
+	});
 }
