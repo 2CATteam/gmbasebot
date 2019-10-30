@@ -13,7 +13,7 @@ const dasani = require("./bots/dasani");
 const python = require("./bots/python");
 const define = require("./bots/define")
 const translate = require("./bots/translate")
-const egg = require("egg.js")
+const egg = require("./bots/egg.js")
 
 let bots = [insult, comp, oof, F, pressTo, python, define, translate, egg];
 
