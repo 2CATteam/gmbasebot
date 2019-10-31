@@ -5,6 +5,7 @@ const eggg = /^\/egg/ig;
 exports.helpString = "/egg"
 
 exports.checkMessage = function(egggg) {
+	console.log("Testing")
 	console.log(egggg.text)
 	if (!eggg.test(egggg.text)) { 
 		console.log("Not a match");
