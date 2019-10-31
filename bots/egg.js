@@ -1,5 +1,5 @@
 const eg = require('./sender.js').send;
-var fotology = require('fotology');
+import GoogleImageSearch from 'free-google-image-search'
 const eggg = /^\/egg/ig;
 
 exports.helpString = "/egg"
@@ -10,11 +10,8 @@ exports.checkMessage = function(egggg) {
 		console.log("Not a match");
 		return;
 	}
-	fotology("EGG", function (imageURLs) {
-		console.log("Test")
-		console.log(imageURLs)
-		for (var i in imageURLs) {
-			console.log(imageURLs[i]);
-		}
-	});
+	GoogleImageSearch.searchImage("egg").then((egg) => {
+		console.log("finished!")
+		console.log(egg)
+	})
 }
