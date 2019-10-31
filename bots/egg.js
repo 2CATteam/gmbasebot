@@ -1,5 +1,5 @@
 const eg = require('./sender.js').send;
-const egg = require('free-google-image-search').GoogleImageSearch
+const egg = require('free-google-image-search')
 const eggg = /^\/egg/ig;
 
 exports.helpString = "/egg"
