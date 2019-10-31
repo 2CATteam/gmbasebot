@@ -1,5 +1,5 @@
 const eg = require('./sender.js').send;
-import GoogleImageSearch from 'free-google-image-search'
+const egg = require('free-google-image-search').GoogleImageSearch
 const eggg = /^\/egg/ig;
 
 exports.helpString = "/egg"
@@ -11,9 +11,9 @@ exports.checkMessage = function(egggg) {
 		console.log("Not a match");
 		return;
 	}
-	GoogleImageSearch.searchImage("egg").then((egg) => {
+	egg.searchImage("egg").then((eggggg) => {
 		console.log("finished!")
-		console.log(egg)
+		console.log(eggggg)
 	}).catch((err) => {
 		console.error(err)
 	})
