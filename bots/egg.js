@@ -13,5 +13,7 @@ exports.checkMessage = function(egggg) {
 	GoogleImageSearch.searchImage("egg").then((egg) => {
 		console.log("finished!")
 		console.log(egg)
+	}).catch((err) => {
+		console.error(err)
 	})
 }
