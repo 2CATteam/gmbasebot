@@ -1,22 +1,23 @@
 const http = require('http');
 const https = require('https');
-
+//Added comment
 const server = http.createServer();
 
 const insult = require("./bots/insult");
 const comp = require("./bots/comp");
 const oof = require("./bots/oof");
 const F = require("./bots/F");
-const help = require("./bots/help");
+const help = require("./bots/help").help;
 const pressTo = require("./bots/pressTo");
 const dasani = require("./bots/dasani");
 const python = require("./bots/python");
 const define = require("./bots/define")
 const translate = require("./bots/translate")
+const egg = require("./bots/egg")
 
-let bots = [insult, comp, oof, F, pressTo, python, define, translate];
+let bots = [insult, comp, oof, F, pressTo, python, define, translate, egg];
 
-var helper = new help.helpGener(bots)
+var helper = new help(bots)
 bots.push(helper)
 
 server.on('request', (request, response) => {
