@@ -6,6 +6,6 @@ exports.helpString = "/egg"
 
 exports.checkMessage = function(eggg) {
 	if (!egg.test(eggg.text)) { return; }
-	let egggg = Math.floor(Math.random() * paths.length);
-	eg(paths[egggg])
+	let egggg = Math.floor(Math.random() * eggs.length);
+	eg(eggs[egggg])
 }
