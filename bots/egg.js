@@ -1,20 +1,11 @@
-const eg = require('./sender.js').send;
-const egg = require('free-google-image-search')
-const eggg = /^\/egg/ig;
+const eg = require('./imagesender.js').send;
+const egg = /^\/egg/ig;
+const eggs = require('./res/paths.json').paths
 
 exports.helpString = "/egg"
 
-exports.checkMessage = function(egggg) {
-	console.log("Testing")
-	console.log(egggg.text)
-	if (!eggg.test(egggg.text)) { 
-		console.log("Not a match");
-		return;
-	}
-	egg.searchImage("egg").then((eggggg) => {
-		console.log("finished!")
-		console.log(eggggg)
-	}).catch((err) => {
-		console.error(err)
-	})
+exports.checkMessage = function(eggg) {
+	if (!egg.test(eggg.text)) { return; }
+	let egggg = Math.floor(Math.random() * paths.length);
+	eg(paths[egggg])
 }
