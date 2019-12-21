@@ -13,6 +13,7 @@ exports.mod = class roast {
 	checkMessage(message) {
 		if (regex.test(message.text) && !spamRegex.test(message.text))
 		{
+			var randomInt = 0
 			var toReturn = message.text.substring(6,message.text.length);
 			toReturn += ", you ";
 			if (Math.random() < 0.1 || message.text.includes("magickeyroast"))

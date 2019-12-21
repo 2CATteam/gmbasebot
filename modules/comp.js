@@ -13,7 +13,7 @@ exports.mod = class comp {
 		if (regex.test(message.text) && !spamRegex.test(message.text)) {
 			var toReturn = message.text.substring(5,message.text.length);
 			toReturn += " ";
-			randomInt = Math.floor(Math.random() * arrays.firstNounArray.length);
+			var randomInt = Math.floor(Math.random() * arrays.firstNounArray.length);
 			toReturn += arrays.firstNounArray[randomInt];
 			toReturn += ", you ";
 			randomInt = Math.floor(Math.random() * arrays.firstAdjectiveArray.length);

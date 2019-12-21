@@ -4,7 +4,7 @@ const sender = require('../sender.js').send;
 
 const translateRegex = /^\/translate\s"(.+)"\s(\S+)\s?(\S+)?/i;
 
-exports.mod = class translate {
+exports.mod = class translator {
 	constructor() {
 		this.helpString = "/translate \"[something]\" [country code] will translate something to a different language, using Yandex.\n"
 		this.name = "translate"
@@ -26,9 +26,13 @@ exports.mod = class translate {
 	        		        toFlag = matches[3]
 				}
         		}
-			translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey } ).then((result) => {
-				sender(result)
-			})
+			try {
+				translate(text, { from: fromFlag, to: toFlag, engine: 'yandex', key: yandexKey } ).then((result) => {
+					sender(result)
+				})
+			} catch(err) {
+				console.log(err)
+			}
 			return true
 		} else return false
 	}

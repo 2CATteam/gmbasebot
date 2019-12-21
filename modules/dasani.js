@@ -19,8 +19,7 @@ exports.mod = class dasani {
 
 	checkMessage(message) {
 		var toReturn = ""
-		messageText = message.text;
-
+		let messageText = message.text;
 		if (messageText && (message.sender_type == "user")) {
 			if (badRegex.test(messageText)) {
 				if (dasaniRegex.test(messageText)) {
@@ -38,7 +37,7 @@ exports.mod = class dasani {
 			}
 			else if (dasaniRegex.test(messageText)) {
 				// Check is successful, return a message!
-				randomMessage = Math.random();
+				let randomMessage = Math.random();
 				toReturn = 'Did I hear Dasani? I LOVE Dasani!\n\nFun fact about Dasani: ';
 				if (randomMessage<.1) {
 					toReturn+= 'It\'s by far the best water!';

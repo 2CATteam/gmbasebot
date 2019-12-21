@@ -1,6 +1,6 @@
 require('dotenv').config()
-const https = require('https');
-const server = https.createServer();
+const http = require('http');
+const server = http.createServer();
 
 var modules = []
 
@@ -29,19 +29,15 @@ server.on('request', (request, response) => {
 	switch (method) {
 		case 'GET':
 			console.log('Starting GET!');
+			response.writeHead(200);
 			response.end('Nice GET request!');
 			break;
 		case 'POST':
-			console.log('Starting POST!');
 			var body = [];
 			request.on('data', chunk => {
-				console.log('Found data!');
-				console.log(chunk.toString());
-				body.push(chunk.toString());
+				body.push(chunk.toString())
 			});
 			request.on('end', chunk => {
-				console.log('Ending parsing!');
-				console.log(body.toString());
 				let message = JSON.parse(body[0]);
 				checkMessages(message);
 				response.writeHead(200);
@@ -54,7 +50,7 @@ server.on('request', (request, response) => {
 function checkMessages(message) {
 	console.log('Checking messages for an incoming message');
 	console.log(message)
-	for (var modules in modules)
+	for (var module in modules)
 	{
 		if (modules[module].checkMessage(message)) {
 			console.log('Message is being handled by ' + modules[module].name)
