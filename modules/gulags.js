@@ -29,7 +29,7 @@ exports.mod = class glg {
 
 	gulagify(prompt) {
 		var message = prompt.text;
-		var key = message.match(gulagsRegex)[1];
+		var key = message.match(gulagsRegex)[1].trim();
 		var num = 1;
 		console.log("Gulag info:");
 		console.log(message);
@@ -63,7 +63,7 @@ exports.mod = class glg {
 
 	pardon(prompt) {
 		let message = prompt.text;
-		var key = message.match(pardonRegex)[1];
+		var key = message.match(pardonRegex)[1].trim();
 		if (this.gulag[key]) {
 			this.gulag[key] = 0;
 			fs.writeFileSync(path.join(__dirname, 'res', 'gulags.json'), JSON.stringify(this.gulag), 'utf-8');
