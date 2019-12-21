@@ -1,24 +1,26 @@
-const http = require('http');
+require('dotenv').config()
 const https = require('https');
-//Added comment
-const server = http.createServer();
+const server = https.createServer();
 
-const insult = require("./bots/insult");
-const comp = require("./bots/comp");
-const oof = require("./bots/oof");
-const F = require("./bots/F");
-const help = require("./bots/help").help;
-const pressTo = require("./bots/pressTo");
-const dasani = require("./bots/dasani");
-const python = require("./bots/python");
-const define = require("./bots/define")
-const translate = require("./bots/translate")
-const egg = require("./bots/egg")
+var modules = []
 
-let bots = [insult, comp, oof, F, pressTo, python, define, translate, egg];
+const fileRegex = /^[^.].+.js/
 
-var helper = new help(bots)
-bots.push(helper)
+console.log('Starting bot!')
+
+require('fs').readdirSync('./modules').forEach((file) => {
+	if (fileRegex.test(file)) {
+		let ClassFile = require('./modules/' + file)
+		let toAdd = new ClassFile.mod()
+		console.log(' Added new module: ' + toAdd.name)
+		modules.push(toAdd)
+	}
+})
+
+const Help = require('./help.js')
+
+modules.push(new Help.mod(modules))
+console.log('Added all modules!')
 
 server.on('request', (request, response) => {
 	console.log('Request!');
@@ -50,13 +52,16 @@ server.on('request', (request, response) => {
 });
 
 function checkMessages(message) {
-	console.log('Checking messages');
-	for (var i = 0; i < bots.length; i++)
+	console.log('Checking messages for an incoming message');
+	console.log(message)
+	for (var modules in modules)
 	{
-		bots[i].checkMessage(message);
+		if (modules[module].checkMessage(message)) {
+			console.log('Message is being handled by ' + modules[module].name)
+		}
 	}
 }
 
 server.listen(process.env.PORT);
 
-console.log("Beginning to listen");
+console.log("Beginning to listen on port " + process.env.PORT);
